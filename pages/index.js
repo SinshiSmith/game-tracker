@@ -1,5 +1,3 @@
-import React from "react";
-
 const Home = () => (
   <main>
     <h1>Game Tracker</h1>
