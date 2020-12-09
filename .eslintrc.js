@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended"],
+  extends: ["eslint:recommended", "eslint-config-airbnb"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -13,10 +13,15 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: [
+    "react",
+    "eslint-plugin-jsx-a11y",
+    "eslint-plugin-import",
+    "eslint-plugin-react-hooks",
+  ],
   rules: {
-    rules: {
-      "react/react-in-jsx-scope": "off",
-    },
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    quotes: [2, "double"],
   },
 };
