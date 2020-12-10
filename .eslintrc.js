@@ -23,5 +23,16 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     quotes: [2, "double"],
+    "comma-dangle": [
+      "error",
+      {
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "never",
+        exports: "never",
+        functions: "never",
+      },
+    ],
+    "react/prop-types": [false],
   },
 };
