@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ["eslint:recommended", "eslint-config-airbnb"],
+  extends: ["eslint:recommended", "eslint-config-airbnb", "prettier"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -36,5 +36,6 @@ module.exports = {
     "react/prop-types": [0],
     "react/button-has-type": [0],
     "react/jsx-props-no-spreading": [0],
+    "react/jsx-curly-newline": [0],
   },
 };
