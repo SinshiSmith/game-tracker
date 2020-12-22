@@ -18,10 +18,11 @@ module.exports = {
     "eslint-plugin-jsx-a11y",
     "eslint-plugin-import",
     "eslint-plugin-react-hooks",
+    "@emotion",
   ],
   rules: {
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [0],
     quotes: [2, "double"],
     "comma-dangle": [
       "error",
@@ -33,6 +34,6 @@ module.exports = {
         functions: "never",
       },
     ],
-    "react/prop-types": [false],
+    "react/prop-types": [0],
   },
 };
