@@ -36,5 +36,6 @@ module.exports = {
     ],
     "react/prop-types": [0],
     "react/button-has-type": [0],
+    "react/jsx-props-no-spreading": [0],
   },
 };
