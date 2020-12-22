@@ -18,7 +18,6 @@ module.exports = {
     "eslint-plugin-jsx-a11y",
     "eslint-plugin-import",
     "eslint-plugin-react-hooks",
-    "@emotion",
   ],
   rules: {
     "react/react-in-jsx-scope": "off",
