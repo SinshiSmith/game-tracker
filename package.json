@@ -11,13 +11,16 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^11.0.0",
     "@emotion/react": "^11.1.2",
     "framer-motion": "^2.9.5",
     "next": "^10.0.3",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-infinite-scroller": "^1.2.4"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.1.2",
     "@testing-library/dom": "^7.28.1",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
@@ -26,6 +29,7 @@
     "babel-jest": "^26.6.3",
     "eslint": "^7.15.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
