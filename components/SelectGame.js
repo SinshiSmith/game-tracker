@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button from "./Button";
 import Search from "./Search";
 
 const SelectGame = () => {
