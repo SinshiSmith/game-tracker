@@ -6,6 +6,9 @@ const MyApp = ({ Component, pageProps }) => (
   <>
     <Global
       styles={{
+        "*": {
+          boxSizing: "border-box",
+        },
         body: {
           margin: 0,
           background: "#121212",
