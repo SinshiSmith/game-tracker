@@ -35,20 +35,22 @@ const SelectGame = ({ className }) => {
               <Link
                 key={game.id}
                 href={`/${game.id}`}
-                css={{
-                  marginBottom: 10,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  textAlign: "center",
-                  background: `linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%), url(${game.background_image}) center/cover no-repeat`,
-                  height: 150,
-                  width: "100%",
-                  maxWidth: 300,
-                }}
                 onClick={() => setGames([])}
+                css={{ width: "100%", maxWidth: 300 }}
               >
-                <p css={{ margin: "0 10px" }}>{game.name}</p>
+                <div
+                  css={{
+                    marginBottom: 10,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    background: `linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%), url(${game.background_image}) center/cover no-repeat`,
+                    height: 150,
+                  }}
+                >
+                  <p css={{ margin: "0 10px" }}>{game.name}</p>
+                </div>
               </Link>
             ))}
           </div>
