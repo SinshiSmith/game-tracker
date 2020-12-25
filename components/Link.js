@@ -1,6 +1,7 @@
 import NextLink from "next/link";
+import Button from "./Button";
 
-const Link = ({ external, href, children, className }) => {
+const Link = ({ external, href, children, className, onClick }) => {
   if (external)
     return (
       <a className={className} href={href} target="_blank" rel="noreferrer">
@@ -14,7 +15,22 @@ const Link = ({ external, href, children, className }) => {
         css={{ textDecoration: "none", cursor: "pointer" }}
         className={className}
       >
-        {children}
+        {onClick ? (
+          <Button
+            css={{
+              padding: 0,
+              margin: 0,
+              background: "unset",
+              fontSize: "inherit",
+              color: "inherit",
+            }}
+            onClick={onClick}
+          >
+            {children}
+          </Button>
+        ) : (
+          children
+        )}
       </a>
     </NextLink>
   );
