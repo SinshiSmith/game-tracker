@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "./Link";
 import Search from "./Search";
 
 const SelectGame = ({ className }) => {
@@ -31,8 +32,9 @@ const SelectGame = ({ className }) => {
             }}
           >
             {games.map((game) => (
-              <div
+              <Link
                 key={game.id}
+                href={`/${game.id}`}
                 css={{
                   marginBottom: 10,
                   display: "flex",
@@ -44,9 +46,10 @@ const SelectGame = ({ className }) => {
                   width: "100%",
                   maxWidth: 300,
                 }}
+                onClick={() => setGames([])}
               >
                 <p css={{ margin: "0 10px" }}>{game.name}</p>
-              </div>
+              </Link>
             ))}
           </div>
         )}
