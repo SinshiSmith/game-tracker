@@ -1,5 +1,4 @@
-import GameCard from "../components/GameCard";
-import Link from "../components/Link";
+import List from "../components/List";
 import useUser from "../hooks/useUser";
 
 const Home = () => {
@@ -25,86 +24,11 @@ const Home = () => {
         },
       }}
     >
-      <section id="playing">
-        <h2>Currently Playing</h2>
-        {games.playing ? (
-          <div
-            css={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-            }}
-          >
-            {games.playing.map((game) => (
-              <Link href={`/${game.id}`}>
-                <GameCard key={game.id} game={game} />
-              </Link>
-            ))}
-          </div>
-        ) : (
-          <p css={{ textAlign: "center", marginBottom: 50 }}>Such Emptiness</p>
-        )}
-      </section>
-      <section id="onHold">
-        <h2>Games On Hold</h2>
-        {games.onHold ? (
-          <div
-            css={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-            }}
-          >
-            {games.onHold.map((game) => (
-              <Link href={`/${game.id}`}>
-                <GameCard key={game.id} game={game} />
-              </Link>
-            ))}
-          </div>
-        ) : (
-          <p css={{ textAlign: "center", marginBottom: 50 }}>Such Emptiness</p>
-        )}
-      </section>
-      <section id="backlog">
-        <h2>Up Next</h2>
-        {games.backlog ? (
-          <div
-            css={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-            }}
-          >
-            {games.backlog.map((game) => (
-              <Link href={`/${game.id}`}>
-                <GameCard key={game.id} game={game} />
-              </Link>
-            ))}
-          </div>
-        ) : (
-          <p css={{ textAlign: "center", marginBottom: 50 }}>Such Emptiness</p>
-        )}
-      </section>
-      <section id="dropped">
-        <h2>Dropped</h2>
-        {games.dropped ? (
-          <div
-            css={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-            }}
-          >
-            {games.dropped.map((game) => (
-              <Link href={`/${game.id}`}>
-                <GameCard key={game.id} game={game} />
-              </Link>
-            ))}
-          </div>
-        ) : (
-          <p css={{ textAlign: "center", marginBottom: 50 }}>Such Emptiness</p>
-        )}
-      </section>
+      <List id="playing" title="Currently Playing" games={games.playing} />
+      <List id="onHold" title="Games On Hold" games={games.onHold} />
+      <List id="backlog" title="Up Next" games={games.backlog} />
+      <List id="finished" title="Finished Games" games={games.finished} />
+      <List id="dropped" title="Dropped" games={games.dropped} />
     </main>
   );
 };
