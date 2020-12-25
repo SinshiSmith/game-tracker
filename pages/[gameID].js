@@ -1,4 +1,5 @@
 import Button from "../components/Button";
+import platforms from "../data/platforms";
 import useMoveToList from "../hooks/useMoveToList";
 import useUser from "../hooks/useUser";
 
@@ -85,7 +86,19 @@ const GamePage = ({ game }) => {
       </div>
 
       <div css={{ margin: "0 10px" }}>
-        <h1 css={{ marginTop: 0 }}>{currentGame.name}</h1>
+        <div css={{ marginBottom: 15 }}>
+          <h1 css={{ margin: 0 }}>{currentGame.name}</h1>
+          <div css={{ display: "flex" }}>
+            {currentGame.parent_platforms.map(({ platform }) => (
+              <div
+                key={platform.id}
+                css={{ width: 14, fill: "#FFFFFF", marginRight: 5 }}
+              >
+                {platforms[platform.slug]?.icon}
+              </div>
+            ))}
+          </div>
+        </div>
         <div
           css={{ maxWidth: 600 }}
           // eslint-disable-next-line
