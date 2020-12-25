@@ -42,7 +42,7 @@ const GamePage = ({ game }) => {
             marginTop: 10,
             listStyle: "none",
             li: { padding: 0, margin: 0 },
-            button: { width: 120, marginBottom: 10 },
+            button: { width: 120, marginBottom: 10, marginRight: 5 },
           }}
         >
           <li>
@@ -68,7 +68,7 @@ const GamePage = ({ game }) => {
             <Button
               css={{
                 color:
-                  currentGame.list === "playing"
+                  currentGame.list === "onHold"
                     ? "#000000"
                     : actionsColors.onHold.color,
                 background:
@@ -87,26 +87,7 @@ const GamePage = ({ game }) => {
             <Button
               css={{
                 color:
-                  currentGame.list === "playing"
-                    ? "#000000"
-                    : actionsColors.dropped.color,
-                background:
-                  currentGame.list === "dropped"
-                    ? "#FEDD1E"
-                    : actionsColors.dropped.background,
-              }}
-              onClick={() =>
-                moveTo({ targetGame: currentGame, list: "dropped" })
-              }
-            >
-              Dropped
-            </Button>
-          </li>
-          <li>
-            <Button
-              css={{
-                color:
-                  currentGame.list === "playing"
+                  currentGame.list === "backlog"
                     ? "#000000"
                     : actionsColors.backlog.color,
                 background:
@@ -119,6 +100,44 @@ const GamePage = ({ game }) => {
               }
             >
               Backlog
+            </Button>
+          </li>
+          <li>
+            <Button
+              css={{
+                color:
+                  currentGame.list === "finished"
+                    ? "#000000"
+                    : actionsColors.finished.color,
+                background:
+                  currentGame.list === "finished"
+                    ? "#FEDD1E"
+                    : actionsColors.finished.background,
+              }}
+              onClick={() =>
+                moveTo({ targetGame: currentGame, list: "finished" })
+              }
+            >
+              Finished
+            </Button>
+          </li>
+          <li>
+            <Button
+              css={{
+                color:
+                  currentGame.list === "dropped"
+                    ? "#000000"
+                    : actionsColors.dropped.color,
+                background:
+                  currentGame.list === "dropped"
+                    ? "#FEDD1E"
+                    : actionsColors.dropped.background,
+              }}
+              onClick={() =>
+                moveTo({ targetGame: currentGame, list: "dropped" })
+              }
+            >
+              Dropped
             </Button>
           </li>
         </ul>
