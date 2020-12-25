@@ -8,7 +8,7 @@ const GamePage = ({ game }) => {
   const [user] = useUser();
   const moveTo = useMoveToList();
 
-  const userGame = user.games.find((savedGame) => savedGame.id === game.id);
+  const userGame = user.games?.find((savedGame) => savedGame.id === game.id);
   const currentGame = userGame || game;
 
   return (
