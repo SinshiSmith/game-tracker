@@ -1,6 +1,7 @@
 /// <reference types="@emotion/react/types/css-prop" />;
 import { Global } from "@emotion/react";
 import Head from "next/head";
+import Header from "../components/Header";
 
 const MyApp = ({ Component, pageProps }) => (
   <>
@@ -24,6 +25,7 @@ const MyApp = ({ Component, pageProps }) => (
         rel="stylesheet"
       />
     </Head>
+    <Header />
     <Component {...pageProps} />
   </>
 );

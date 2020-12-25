@@ -1,10 +1,11 @@
 import { useState } from "react";
+import Link from "./Link";
 import Search from "./Search";
 
-const SelectGame = () => {
+const SelectGame = ({ className }) => {
   const [games, setGames] = useState([]);
   return (
-    <div css={{ position: "sticky", top: 0 }}>
+    <div className={className} css={{ position: "sticky", top: 0 }}>
       <div css={{ position: "relative" }}>
         <Search
           onSearch={(searchValue) =>
@@ -31,8 +32,9 @@ const SelectGame = () => {
             }}
           >
             {games.map((game) => (
-              <div
+              <Link
                 key={game.id}
+                href={`/${game.id}`}
                 css={{
                   marginBottom: 10,
                   display: "flex",
@@ -44,9 +46,10 @@ const SelectGame = () => {
                   width: "100%",
                   maxWidth: 300,
                 }}
+                onClick={() => setGames([])}
               >
                 <p css={{ margin: "0 10px" }}>{game.name}</p>
-              </div>
+              </Link>
             ))}
           </div>
         )}
