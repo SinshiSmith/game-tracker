@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Search from "./Search";
 
-const SelectGame = () => {
+const SelectGame = ({ className }) => {
   const [games, setGames] = useState([]);
   return (
-    <div css={{ position: "sticky", top: 0 }}>
+    <div className={className} css={{ position: "sticky", top: 0 }}>
       <div css={{ position: "relative" }}>
         <Search
           onSearch={(searchValue) =>
