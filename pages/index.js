@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import GameCard from "../components/GameCard";
+import Link from "../components/Link";
 import Loader from "../components/Loader";
 
 const Home = ({ games = {} }) => {
@@ -34,7 +35,9 @@ const Home = ({ games = {} }) => {
           }}
         >
           {data.results.map((game) => (
-            <GameCard key={game.id} game={game} />
+            <Link href={`/${game.id}`}>
+              <GameCard key={game.id} game={game} />
+            </Link>
           ))}
         </div>
       </InfiniteScroll>
