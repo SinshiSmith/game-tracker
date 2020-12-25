@@ -1,16 +1,21 @@
 import NextLink from "next/link";
 
-const Link = ({ external, href, children }) => {
+const Link = ({ external, href, children, className }) => {
   if (external)
     return (
-      <a href={href} target="_blank" rel="noreferrer">
+      <a className={className} href={href} target="_blank" rel="noreferrer">
         {children}
       </a>
     );
   return (
     <NextLink href={href}>
       {/* eslint-disable-next-line */}
-      <a css={{ textDecoration: "none", cursor: "pointer" }}>{children}</a>
+      <a
+        css={{ textDecoration: "none", cursor: "pointer" }}
+        className={className}
+      >
+        {children}
+      </a>
     </NextLink>
   );
 };
