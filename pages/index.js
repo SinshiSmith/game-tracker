@@ -1,5 +1,6 @@
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
+import GameCard from "../components/GameCard";
 import Loader from "../components/Loader";
 
 const Home = ({ games = {} }) => {
@@ -26,25 +27,14 @@ const Home = ({ games = {} }) => {
         loader={<Loader key={data.results.length} />}
       >
         <div
-          css={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+          css={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+          }}
         >
           {data.results.map((game) => (
-            <div
-              css={{
-                margin: 10,
-                textAlign: "center",
-                width: "45vw",
-                maxWidth: 420,
-                height: 200,
-                background: `linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0) 100%), url(${game.background_image}) top/cover no-repeat`,
-                display: "flex",
-                alignItems: "flex-end",
-                justifyContent: "center",
-              }}
-              key={game.id}
-            >
-              <p css={{ color: "#E2E2E2" }}>{game.name}</p>
-            </div>
+            <GameCard key={game.id} game={game} />
           ))}
         </div>
       </InfiniteScroll>
