@@ -1,4 +1,5 @@
 import Button from "../components/Button";
+import actionsColors from "../data/actionColors";
 import platforms from "../data/platforms";
 import useMoveToList from "../hooks/useMoveToList";
 import useUser from "../hooks/useUser";
@@ -19,9 +20,10 @@ const GamePage = ({ game }) => {
         alignItems: "flex-start",
         justifyContent: "center",
         minHeight: "100vh",
+        flexWrap: "wrap",
       }}
     >
-      <div css={{ width: "100%", maxWidth: 600 }}>
+      <div css={{ width: "100%", maxWidth: 600, marginBottom: 30 }}>
         <img
           src={currentGame.background_image}
           css={{
@@ -33,18 +35,28 @@ const GamePage = ({ game }) => {
         <ul
           css={{
             display: "flex",
+            flexWrap: "wrap",
             justifyContent: "space-evenly",
             padding: 0,
             margin: 0,
             marginTop: 10,
             listStyle: "none",
             li: { padding: 0, margin: 0 },
-            button: { width: 120 },
+            button: { width: 120, marginBottom: 10 },
           }}
         >
           <li>
             <Button
-              css={{ background: currentGame.list === "playing" && "#FEDD1E" }}
+              css={{
+                color:
+                  currentGame.list === "playing"
+                    ? "#000000"
+                    : actionsColors.playing.color,
+                background:
+                  currentGame.list === "playing"
+                    ? "#FEDD1E"
+                    : actionsColors.playing.background,
+              }}
               onClick={() =>
                 moveTo({ targetGame: currentGame, list: "playing" })
               }
@@ -54,7 +66,16 @@ const GamePage = ({ game }) => {
           </li>
           <li>
             <Button
-              css={{ background: currentGame.list === "onHold" && "#FEDD1E" }}
+              css={{
+                color:
+                  currentGame.list === "playing"
+                    ? "#000000"
+                    : actionsColors.onHold.color,
+                background:
+                  currentGame.list === "onHold"
+                    ? "#FEDD1E"
+                    : actionsColors.onHold.background,
+              }}
               onClick={() =>
                 moveTo({ targetGame: currentGame, list: "onHold" })
               }
@@ -64,7 +85,16 @@ const GamePage = ({ game }) => {
           </li>
           <li>
             <Button
-              css={{ background: currentGame.list === "dropped" && "#FEDD1E" }}
+              css={{
+                color:
+                  currentGame.list === "playing"
+                    ? "#000000"
+                    : actionsColors.dropped.color,
+                background:
+                  currentGame.list === "dropped"
+                    ? "#FEDD1E"
+                    : actionsColors.dropped.background,
+              }}
               onClick={() =>
                 moveTo({ targetGame: currentGame, list: "dropped" })
               }
@@ -74,7 +104,16 @@ const GamePage = ({ game }) => {
           </li>
           <li>
             <Button
-              css={{ background: currentGame.list === "backlog" && "#FEDD1E" }}
+              css={{
+                color:
+                  currentGame.list === "playing"
+                    ? "#000000"
+                    : actionsColors.backlog.color,
+                background:
+                  currentGame.list === "backlog"
+                    ? "#FEDD1E"
+                    : actionsColors.backlog.background,
+              }}
               onClick={() =>
                 moveTo({ targetGame: currentGame, list: "backlog" })
               }
